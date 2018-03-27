@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/libraries/ocds-jackson-model/ocds-jackson-model.iml" filepath="$PROJECT_DIR$/libraries/ocds-jackson-model/ocds-jackson-model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/applications/ted-xml-importer/ted-xml-importer.iml" filepath="$PROJECT_DIR$/applications/ted-xml-importer/ted-xml-importer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/libraries/ted-xml-simplexml-parser/ted-xml-simplexml-parser.iml" filepath="$PROJECT_DIR$/libraries/ted-xml-simplexml-parser/ted-xml-simplexml-parser.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tenderbase.iml" filepath="$PROJECT_DIR$/tenderbase.iml" />
+      <module fileurl="file://$PROJECT_DIR$/applications/webapp/webapp.iml" filepath="$PROJECT_DIR$/applications/webapp/webapp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/libraries/webapp-jpa-model/webapp-jpa-model.iml" filepath="$PROJECT_DIR$/libraries/webapp-jpa-model/webapp-jpa-model.iml" />
+    </modules>
+  </component>
+</project>

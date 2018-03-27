@@ -1,0 +1,155 @@
+<!-- field -->
+<div class="row" data-th-fragment="field(t,v)" data-th-if="${v}" data-th-unless="${v instanceof T(java.util.AbstractCollection) && v.isEmpty()}">
+	<dt class="col-md-4" data-th-text="${t}"></dt>
+	<div data-th-switch="${v instanceof T(java.util.AbstractCollection)}" data-th-remove="tag">
+		<dd class="col" data-th-case="${true}">
+			<span data-th-each="e: ${v}" data-th-remove="tag">
+				<span data-th-include="fragments :: value (v=${e})" data-th-remove="tag"></span>
+				<br>
+			</span>
+		</dd>
+		<dd class="col" data-th-case="${false}" data-th-include="fragments :: value (v=${v})"></dd>
+	</div>
+</div>
+
+<!-- fieldsOfOrg -->
+<dl data-th-fragment="fieldsOfOrg(o)" data-th-if="${o}" data-th-object="${o}" data-th-id="${o.id}">
+	<div data-th-replace="fragments :: field (t='Roles', v=*{roles})"></div>
+	<!--<div data-th-replace="fragments :: field (t='ID', v=*{id})"></div>-->
+	<div data-th-replace="fragments :: field (t='Organization name', v=*{name})"></div>
+	<div data-th-object="${o.address}" data-th-if="${o.address}" data-th-remove="tag">
+		<div data-th-replace="fragments :: field (t='Street address', v=*{streetAddress})"></div>
+		<div data-th-replace="fragments :: field (t='Locality', v=*{locality})"></div>
+		<div data-th-replace="fragments :: field (t='Region', v=*{region})"></div>
+		<div data-th-replace="fragments :: field (t='Postal code', v=*{postalCode})"></div>
+		<div data-th-replace="fragments :: field (t='Country', v=*{countryName})"></div>
+	</div>
+	<div data-th-object="${o.contactPoint}" data-th-if="${o.contactPoint}" data-th-remove="tag">
+		<div data-th-replace="fragments :: field (t='Contact name', v=*{name})"></div>
+		<div data-th-replace="fragments :: field (t='E-mail', v=*{email})"></div>
+		<div data-th-replace="fragments :: field (t='Phone', v=*{telephone})"></div>
+		<div data-th-replace="fragments :: field (t='Fax', v=*{faxNumber})"></div>
+		<div data-th-replace="fragments :: field (t='Website', v=*{url})"></div>
+	</div>
+</dl>
+
+<!-- footer -->
+<footer class="mt-auto py-3 bg-dark text-light" data-th-fragment="footer">
+	<div class="container">
+		<div class="row">
+			<div class="col">&copy; 2017
+				<a href="http://www.deepdata.hu/" target="_blank">DeepData Ltd.</a>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<!-- nav -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light" data-th-fragment="nav">
+	<div class="container">
+		<a class="navbar-brand" href="/">TenderBase</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+		 aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item">
+					<a class="nav-link" href="/releases/">Releases</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/organizations/">Organizations</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/resources/">Resources</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+<!-- releaseList -->
+<div data-th-fragment="releaseList(releases)" data-th-if="${releases}" data-th-remove="tag">
+	<div class="card mb-4" data-th-each="r: ${releases}">
+		<div class="card-body">
+			<p class="small">
+				<span data-th-text="${#dates.format(r.publishedAt, 'yyyy-MM-dd')}">YYYY-MM-DD</span>
+				<span data-th-each="t: ${r.tags.split(',')}" data-th-remove="tag">
+					<span class="badge badge-secondary" data-th-text="${t}">tag</span>
+				</span>
+			</p>
+			<h5 class="card-title">
+				<a data-th-href="'/release/' + ${r.id}" data-th-text="${r.title}">Release ID</a>
+			</h5>
+			<p class="card-text">
+				<strong data-th-if="${r.eurValue}">
+					<span data-th-replace="fragments :: value (v=${r.eurValue})"></span>
+					EUR
+					<span data-th-if="${r.buyerName}" data-th-remove="tag">&middot;</span>
+				</strong>
+				<span data-th-if="${r.buyerName}" data-th-remove="tag">
+					<em>Buyer:</em>
+					<span data-th-text="${r.buyerName}"></span>
+				</span>
+			</p>
+		</div>
+	</div>
+	<p class="mb-4 small text-justify"><em>
+		EUR values shown above are here to give a unified view about each tender's value. As we calculate them based on a fixed currency rate from the past, real value may differ now. Please check the details pages for the real value in the original currency.
+	</em></p>
+</div>
+
+<!-- value -->
+<span data-th-fragment="value(v)" data-th-if="${v}" data-th-remove="tag">
+	<span data-th-switch="${v.class.simpleName}" data-th-remove="tag">
+
+		<span data-th-case="Date" data-th-text="${#dates.format(v, 'yyyy-MM-dd')}" data-th-remove="tag"></span>
+		<span data-th-case="Long" data-th-text="${#numbers.formatDecimal(v, 0, 'WHITESPACE', 0, 'POINT')}" data-th-remove="tag"></span>
+		<span data-th-case="String" data-th-utext="${#strings.replace( #strings.escapeXml( v ),'&#10;','&lt;br /&gt;')}" data-th-remove="tag"></span>
+		<span data-th-case="Timestamp" data-th-text="${#dates.format(v, 'yyyy-MM-dd')}" data-th-remove="tag"></span>
+
+		<span data-th-case="Amount" data-th-remove="tag">
+			<span data-th-if="${v.amount}" data-th-text="${#numbers.formatDecimal(v.amount, 0, 'WHITESPACE', 2, 'POINT')}" data-th-remove="tag"></span>
+			<span data-th-if="${v.currency}" data-th-text="${v.currency}" data-th-remove="tag"></span>
+		</span>
+		<span data-th-case="Classification" data-th-remove="tag">
+			<span data-th-if="${v.scheme}" data-th-text="${v.scheme} + ' / '" data-th-remove="tag"></span>
+			<span data-th-if="${v.id}" data-th-text="${v.id}" data-th-remove="tag"></span>
+			<span data-th-if="${v.description}" data-th-text="' (' + ${v.description} +')'" data-th-remove="tag"></span>
+		</span>
+		<span data-th-case="OrganizationReference" data-th-if="${v.name}" data-th-remove="tag">
+			<a data-th-href="'#' + ${v.id}" data-th-text="${v.name}"></a>
+			<i class="fa fa-level-down"></i>
+		</span>
+		<span data-th-case="Period" data-th-remove="tag">
+			<span data-th-if="${v.startDate}" data-th-text="${#dates.format(v.startDate, 'yyyy-MM-dd')}" data-th-remove="tag"></span>
+			<span data-th-unless="${v.startDate}" data-th-remove="tag">?</span>
+			-
+			<span data-th-if="${v.endDate}" data-th-text="${#dates.format(v.endDate, 'yyyy-MM-dd')}" data-th-remove="tag"></span>
+			<span data-th-unless="${v.endDate}" data-th-remove="tag">?</span>
+		</span>
+
+		<span data-th-case="WRelease" data-th-if="${v.id}" data-th-remove="tag">
+			<span data-th-switch="${c != null && c == v.id}" data-th-remove="tag">
+				<span data-th-case="${true}" data-th-remove="tag">
+					<span data-th-replace="fragments :: value (v=${v.publishedAt})"></span>
+					<span data-th-text="'(' + ${v.id} + ')'" data-th-remove="tag"></span>
+					<i class="fa fa-angle-double-left"></i>
+				</span>
+				<a data-th-case="${false}" data-th-href="'/release/' + ${v.id}">
+					<span data-th-replace="fragments :: value (v=${v.publishedAt})"></span>
+					<span data-th-text="'(' + ${v.id} + ')'" data-th-remove="tag"></span>
+				</a>
+			</span>
+		</span>
+
+		<span data-th-case="*" data-th-remove="tag">
+			<span data-th-if="${v.toString().startsWith('http')}" data-th-remove="tag">
+				<a data-th-href="${v}" target="_blank">Link</a>
+				<i class="fa fa-external-link"></i>
+			</span>
+			<span data-th-unless="${v.toString().startsWith('http')}" data-th-text="${v}" data-th-remove="tag"></span>
+		</span>
+	</span>
+</span>

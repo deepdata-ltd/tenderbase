@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="eu-tenders-ted-xml-simplexml-parser" />
+        <module name="ocds-jackson-model" />
+        <module name="ted-xml-importer" />
+        <module name="ted-xml-simplexml-parser" />
+        <module name="webapp" />
+        <module name="webapp-jpa-model" />
+      </profile>
+      <profile name="Annotation profile for ocds-jpa-model" enabled="true">
+        <sourceOutputDir name="../../ocds-jpa-model/target/generated-sources/annotations" />
+        <sourceTestOutputDir name="../../ocds-jpa-model/target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="ocds-jpa-model" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="eu-tenders" target="1.8" />
+      <module name="eu-tenders-build" target="1.5" />
+      <module name="ocds-jackson-model" target="1.8" />
+      <module name="ted-xml-importer" target="1.8" />
+      <module name="ted-xml-jaxb-model" target="1.8" />
+      <module name="ted-xml-simplexml-parser" target="1.8" />
+      <module name="tenderbase" target="1.8" />
+      <module name="webapp" target="1.8" />
+      <module name="webapp-jpa-model" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

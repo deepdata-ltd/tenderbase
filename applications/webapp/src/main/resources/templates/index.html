@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" data-layout-decorator="layouts/base">
+
+<head>
+	<title>Welcome</title>
+</head>
+
+<body>
+	<div data-layout-fragment="body">
+		<nav data-th-replace="fragments :: nav"></nav>
+		<div class="container-fluid">
+			<div class="row my-5 py-5">
+				<div class="col text-center">
+					<h1 class="display-3">TenderBase</h1>
+					<h2 class="font-weight-light">International tender database using OCDS</h2>
+				</div>
+			</div>
+			<div class="row my-3 py-5 text-center bg-light">
+				<div class="col-md-6 col-lg-3 my-3">
+					<h1>
+						<strong data-countup data-th-text="${tenderCount}">0</strong>
+						<br>
+						<span class="font-weight-light">tenders</span>
+					</h1>
+				</div>
+				<div class="col-md-6 col-lg-3 my-3">
+					<h1>
+						<strong data-countup data-th-text="${releaseCount}">0</strong>
+						<br>
+						<span class="font-weight-light">releases</span>
+					</h1>
+				</div>
+				<div class="col-md-6 col-lg-3 my-3">
+					<h1>
+						<strong data-countup data-th-text="${organizationCount}">0</strong>
+						<br>
+						<span class="font-weight-light">organizations</span>
+					</h1>
+				</div>
+				<div class="col-md-6 col-lg-3 my-3">
+					<h1>
+						<strong data-countup data-suffixes="M,B,T,Q" data-th-text="${sumOfAwardedMillionEur}">0</strong>
+						<br>
+						<span class="font-weight-light">EUR awarded</span>
+					</h1>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row my-5 py-5">
+				<div class="col-lg-5">
+					<p class="lead text-justify">
+						<em>TenderBase</em> grabs fresh notices every day from
+						<a href="http://ted.europa.eu/" target="_blank">TED</a>, converts them into
+						<a href="http://standard.open-contracting.org/" target="_blank">OCDS</a> releases and stores it in its database. Note that only those notices are being processed which are using the
+						newer TED-XML (2.0.9) schema.
+					</p>
+					<p class="lead text-justify">
+						The API provides an easy way to access release and procurement process information in JSON format, using OCDS. You can find
+						JSON API links on list and detail pages.
+					</p>
+				</div>
+				<div class="col-lg-6 offset-lg-1">
+					<h2>Latest releases</h2>
+					<div class="my-3">
+						<p data-th-each="r: ${latest}">
+							<span data-th-text="${#dates.format(r.publishedAt, 'yyyy-MM-dd')}">YYYY-MM-DD</span>
+							<strong>
+								<a data-th-href="'/release/' + ${r.id}" data-th-text="${r.title}">Release ID</a>
+							</strong>
+						</p>
+					</div>
+					<div class="my-5">
+						<a href="/releases/" class="btn btn-outline-primary">
+							<i class="fa fa-fw fa-files-o"></i>
+							Browse releases
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div data-layout-fragment="scripts">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/1.9.3/countUp.min.js"></script>
+		<script>
+			$(function () {
+				$('[data-countup]').each(function (k, v) {
+					var n = Number($(v).text());
+					var s = $(v).data('suffixes');
+					if (typeof s == 'undefined') s = ',K,M,B,T,Q';
+					s = s.split(',').reverse();
+					while (n > 9999 && s.length > 1) {
+						n = Math.floor(n / 1000);
+						s.pop();
+					}
+					var c = new CountUp(v, 0, n, 0, 2.5, {
+						useEasing: true,
+						useGrouping: true,
+						separator: ' ',
+						decimal: '.',
+						suffix: s.pop()
+					});
+					if (!c.error) c.start();
+				});
+			});
+
+		</script>
+	</div>
+</body>
+
+</html>

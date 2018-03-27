@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" data-layout-decorator="layouts/page">
+
+<head>
+	<title data-th-text="${id}">Release ID</title>
+</head>
+
+<body>
+	<div data-layout-fragment="content">
+		<div class="row">
+			<div class="col-12">
+				<h1 class="my-5" data-th-text="${release.tender.title}">Tender title</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12">
+				<h2 class="my-5">Release</h2>
+			</div>
+			<div class="col-lg-10 offset-lg-1" data-th-object="${release}">
+				<dl>
+					<div data-th-replace="fragments :: field (t='ID', v=*{id})"></div>
+					<div data-th-replace="fragments :: field (t='Buyer', v=*{buyer})"></div>
+					<div data-th-replace="fragments :: field (t='Date', v=*{date})"></div>
+					<div data-th-replace="fragments :: field (t='Language', v=*{language})"></div>
+					<div data-th-replace="fragments :: field (t='Tags', v=*{tag})"></div>
+				</dl>
+				<p>
+					<a data-th-href="'/api/release/' + ${release.id}" class="btn btn-sm btn-outline-info">
+						<i class="fa fa-fw fa-code"></i>
+						Release in JSON
+					</a>
+				</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12">
+				<h2 class="my-5">Process</h2>
+			</div>
+			<div class="col-lg-10 offset-lg-1" data-th-object="${release}">
+				<dl>
+					<div data-th-replace="fragments :: field (t='ID (OCID)', v=*{ocid})"></div>
+					<div data-th-replace="fragments :: field (t='Releases', v=${releases}, c=${release.id})"></div>
+				</dl>
+				<p>
+					<a data-th-href="'/api/process/' + *{ocid}" class="btn btn-sm btn-outline-info">
+						<i class="fa fa-fw fa-code"></i>
+						Releases in JSON
+					</a>
+				</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12">
+				<h2 class="my-5">Tender</h2>
+			</div>
+			<div class="col-lg-10 offset-lg-1" data-th-object="${release.tender}">
+				<dl>
+					<div data-th-replace="fragments :: field (t='Title', v=*{title})"></div>
+					<div data-th-replace="fragments :: field (t='Award criteria', v=*{awardCriteria})"></div>
+					<div data-th-replace="fragments :: field (t='Award criteria details', v=*{awardCriteriaDetails})"></div>
+					<div data-th-replace="fragments :: field (t='Award period', v=*{awardPeriod})"></div>
+					<div data-th-replace="fragments :: field (t='Eligibility criteria', v=*{eligibilityCriteria})"></div>
+					<div data-th-replace="fragments :: field (t='Main procurement category', v=*{mainProcurementCategory})"></div>
+					<div data-th-replace="fragments :: field (t='Procurement method', v=*{procurementMethod})"></div>
+					<div data-th-replace="fragments :: field (t='Procurement method details', v=*{procurementMethodDetails})"></div>
+					<div data-th-replace="fragments :: field (t='Tender period', v=*{tenderPeriod})"></div>
+					<div data-th-replace="fragments :: field (t='Value', v=*{value})"></div>
+					<div data-th-replace="fragments :: field (t='Minimum value', v=*{minValue})"></div>
+					<div data-th-replace="fragments :: field (t='Number of tenderers', v=*{numberOfTenderers})"></div>
+					<div data-th-replace="fragments :: field (t='Tenderers', v=*{tenderers})"></div>
+				</dl>
+			</div>
+		</div>
+		<div class="row" data-th-if="${release.tender.items}" data-th-each="item: ${release.tender.items}">
+			<div class="col-12">
+				<h2 class="my-5">Tender item</h2>
+			</div>
+			<div class="col-lg-10 offset-lg-1" data-th-object="${item}">
+				<dl>
+					<div data-th-replace="fragments :: field (t='ID', v=*{id})"></div>
+					<div data-th-replace="fragments :: field (t='Classification', v=*{classification})"></div>
+					<div data-th-replace="fragments :: field (t='Additional classifications', v=*{additionalClassifications})"></div>
+					<div data-th-replace="fragments :: field (t='Description', v=*{description})"></div>
+				</dl>
+			</div>
+		</div>
+		<div class="row" data-th-if="${release.awards}" data-th-each="a: ${release.awards}">
+			<div class="col-12">
+				<h2 class="my-5">Award</h2>
+			</div>
+			<div class="col-lg-10 offset-lg-1" data-th-object="${a}">
+				<dl>
+					<div data-th-replace="fragments :: field (t='ID', v=*{id})"></div>
+					<div data-th-replace="fragments :: field (t='Title', v=*{title})"></div>
+					<div data-th-replace="fragments :: field (t='Description', v=*{description})"></div>
+					<div data-th-replace="fragments :: field (t='Date', v=*{date})"></div>
+					<div data-th-replace="fragments :: field (t='Contract period', v=*{contractPeriod})"></div>
+					<div data-th-replace="fragments :: field (t='Status', v=*{status})"></div>
+					<div data-th-replace="fragments :: field (t='Value', v=*{value})"></div>
+					<div data-th-replace="fragments :: field (t='Suppliers', v=*{suppliers})"></div>
+				</dl>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12">
+				<h2 class="my-5">Parties</h2>
+			</div>
+			<div class="col-lg-10 offset-lg-1">
+				<div data-th-each="p: ${release.parties}" data-th-remove="tag">
+					<div data-th-replace="fragments :: fieldsOfOrg (o=${p})"></div>
+					<p>
+						<a data-th-href="'/organization/' + ${p.id}" class="btn btn-sm btn-outline-primary">
+							<i class="fa fa-fw fa-sitemap"></i>
+							Organization data
+						</a>
+						<a data-th-href="'/api/organization/' + ${p.id}" class="btn btn-sm btn-outline-info">
+							<i class="fa fa-fw fa-code"></i>
+							Organization in JSON
+						</a>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12">
+				<h2 class="my-5">OCDS JSON (only for testing)</h2>
+			</div>
+			<div class="col-lg-10 offset-lg-1">
+				<pre><code data-th-text="${json}"></code></pre>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

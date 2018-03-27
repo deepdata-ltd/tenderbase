@@ -1,0 +1,74 @@
+#
+#    Copyright 2018 DeepData Ltd.
+#
+#    Licensed under the Apache License, Version 2.0 (the "License");
+#    you may not use this file except in compliance with the License.
+#    You may obtain a copy of the License at
+#
+#        http://www.apache.org/licenses/LICENSE-2.0
+#
+#    Unless required by applicable law or agreed to in writing, software
+#    distributed under the License is distributed on an "AS IS" BASIS,
+#    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#    See the License for the specific language governing permissions and
+#    limitations under the License.
+#
+
+# Make a copy of this file without the '-example' part in the filename, then
+# actualize the values below to fit your environment. Ensure that this file is
+# in the working directory when you start any of the applications.
+
+# This file uses YAML syntax (http://www.yaml.org/spec/1.2/spec.html).
+# Do NOT use tab characters in this file.
+
+
+
+# MySQL database connection parameters
+db:
+  # Database host IP or domain name, optionally with port number, e.g.
+  # "domainOrIP" or "domainOrIP:1234"
+  host: localhost
+
+  # Name of the database
+  name: tenderbase
+
+  # User that has read/write permissions on the above database
+  user: root
+
+  # User's password
+  pass: root
+
+
+
+# TED-XML Importer settings
+import:
+
+  # Optional country filter. Should contain two-letter codes
+  # separated with commas. When you extend the scope by
+  # adding a country or disabling the filter, you should
+  # use reprocessPolicy=ALL setting to process all data.
+  #countryFilter: "HU,PL"
+
+  # Directory where TED daily packages are located
+  #dailyPackagesDir: "daily-packages"
+
+  # Tune the log level of the application. You can use values
+  # ERROR, WARN, INFO, DEBUG, TRACE or OFF. When you specify
+  # DEBUG or TRACE, EasyBatch logging will be turned on too.
+  #logLevel: "INFO"
+
+  # OCID prefix to be used when generating OCDS releases
+  # and records
+  ocidPrefix: "ocds-ABC123"
+
+  # When to reprocess XMLs based on previous process version.
+  # NO: never, ALL: always, PATCH: on patch version increase,
+  # MINOR: on minor version increase, MAJOR: on major version
+  # increase.
+  #reprocessPolicy: "NO"
+
+# Web application settings
+server:
+
+  # Running port of the web application.
+  #port: 8080

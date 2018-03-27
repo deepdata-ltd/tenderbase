@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" data-layout-decorator="layouts/page">
+
+<head>
+	<title>Organizations</title>
+</head>
+
+<body>
+	<div data-layout-fragment="content">
+		<div class="row">
+			<div class="col-12 my-5">
+				<h1>Organizations</h1>
+				<p class="font-italic">
+					Listing
+					<span data-th-if="${organizations.totalElements < organizationCount}">
+						<span data-th-text="${organizations.totalElements}">0</span> filtered organizations. Total organization count:
+						<span data-th-text="${organizationCount}">0</span>
+					</span>
+					<span data-th-if="${organizations.totalElements == organizationCount}">
+						<span data-th-text="${organizationCount}">0</span> organizations
+					</span>
+				</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12">
+				<div class="card mb-5">
+					<div class="card-header" role="tab" data-toggle="collapse" data-target="#filters">
+						<i class="fa fa-fw fa-filter"></i>
+						Filters
+					</div>
+					<div id="filters" class="collapse" role="tabpanel" data-th-classappend="${filters.isFiltering()} ? show">
+						<div class="card-body">
+							<form>
+								<div class="row mb-3">
+									<div class="col-lg-6 form-group">
+										<label for="name">Name</label>
+										<input type="text" class="form-control" data-th-field="${filters.name}" placeholder="Type words and spaces">
+										<small class="form-text text-muted">It will match all words, and in order!</small>
+									</div>
+								</div>
+								<div class="row mb-2">
+									<div class="col text-center">
+										<button type="submit" class="btn btn-outline-primary">Filter</button>
+										<a href="/organizations/" class="btn btn-outline-secondary">Clear</a>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12">
+				<div class="card mb-4" data-th-each="o: ${organizations}">
+					<div class="card-body">
+						<h5 class="card-title">
+							<a data-th-href="'/organization/' + ${o.id}" data-th-text="${o.name}">Organization name</a>
+						</h5>
+						<!-- <p class="card-text">Address? Roles+counts? Sum winnings EUR?</p> -->
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row mb-5">
+			<div class="col-lg-6 mb-2">
+				<a href="#" class="btn btn-outline-primary" data-th-href="${pageLinkPrefix} + ${organizations.getNumber()-1}" data-th-unless="${organizations.isFirst()}">
+					<i class="fa fa-fw fa-angle-left"></i>
+					Page
+					<span data-th-text="${organizations.getNumber()}"></span>
+				</a>
+				<a href="#" class="btn btn-outline-primary" data-th-href="${pageLinkPrefix} + ${organizations.getNumber()+1}" data-th-unless="${organizations.isLast()}">
+					Page
+					<span data-th-text="${organizations.getNumber() + 2}"></span>
+					<i class="fa fa-fw fa-angle-right"></i>
+				</a>
+			</div>
+			<div class="col-lg-6 mb-2 text-lg-right">
+				<a href="#" class="btn btn-outline-info" data-th-href="'/api' + ${pageLinkPrefix} + ${organizations.getNumber()}">
+					<i class="fa fa-fw fa-code"></i> Page as JSON
+				</a>
+			</div>
+		</div>
+	</div>
+	<div data-layout-fragment="scripts">
+		<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
+		<script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+		<script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
+	</div>
+</body>
+
+</html>

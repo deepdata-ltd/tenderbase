@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TED_EXPORT xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xmlns="ted/R2.0.9.S02/publication"
+            xmlns:n2016="ted/2016/nuts"
+            xsi:schemaLocation="ted/R2.0.9.S02/publication TED_EXPORT.xsd"
+            VERSION="R2.0.9.S02.E01"
+            DOC_ID="401409-2017"
+            EDITION="2017195">
+   <TECHNICAL_SECTION>
+      <RECEPTION_ID>17-419186-001</RECEPTION_ID>
+      <DELETION_DATE>20180114</DELETION_DATE>
+      <FORM_LG_LIST>NL </FORM_LG_LIST>
+      <COMMENTS>From Convertor</COMMENTS>
+   </TECHNICAL_SECTION>
+   <LINKS_SECTION>
+      <XML_SCHEMA_DEFINITION_LINK xlink:type="simple"
+                                  xlink:href="http://ted.europa.eu"
+                                  xlink:title="TED WEBSITE"/>
+      <OFFICIAL_FORMS_LINK xlink:type="simple" xlink:href="http://ted.europa.eu"/>
+      <FORMS_LABELS_LINK xlink:type="simple" xlink:href="http://ted.europa.eu"/>
+      <ORIGINAL_CPV_LINK xlink:type="simple" xlink:href="http://ted.europa.eu"/>
+      <ORIGINAL_NUTS_LINK xlink:type="simple" xlink:href="http://ted.europa.eu"/>
+   </LINKS_SECTION>
+   <CODED_DATA_SECTION>
+      <REF_OJS>
+         <COLL_OJ>S</COLL_OJ>
+         <NO_OJ>195</NO_OJ>
+         <DATE_PUB>20171011</DATE_PUB>
+      </REF_OJS>
+      <NOTICE_DATA>
+         <NO_DOC_OJS>2017/S 195-401409</NO_DOC_OJS>
+         <URI_LIST>
+            <URI_DOC LG="NL">http://ted.europa.eu/udl?uri=TED:NOTICE:401409-2017:TEXT:NL:HTML</URI_DOC>
+         </URI_LIST>
+         <LG_ORIG>NL</LG_ORIG>
+         <ISO_COUNTRY VALUE="NL"/>
+         <IA_URL_GENERAL>http://www.prorail.nl/leveranciers/aanbesteden-en-inkoop</IA_URL_GENERAL>
+         <ORIGINAL_CPV CODE="45221000">Construction work for bridges and tunnels, shafts and subways</ORIGINAL_CPV>
+         <ORIGINAL_CPV CODE="45234000">Construction work for railways and cable transport systems</ORIGINAL_CPV>
+         <n2016:PERFORMANCE_NUTS CODE="NL">NEDERLAND</n2016:PERFORMANCE_NUTS>
+         <n2016:CA_CE_NUTS CODE="NL">NEDERLAND</n2016:CA_CE_NUTS>
+         <n2016:TENDERER_NUTS CODE="NL">NEDERLAND</n2016:TENDERER_NUTS>
+         <VALUES>
+            <VALUE TYPE="PROCUREMENT_TOTAL" CURRENCY="EUR">1.0</VALUE>
+         </VALUES>
+      </NOTICE_DATA>
+      <CODIF_DATA>
+         <DS_DATE_DISPATCH>20171006</DS_DATE_DISPATCH>
+         <AA_AUTHORITY_TYPE CODE="4">Utilities entity</AA_AUTHORITY_TYPE>
+         <TD_DOCUMENT_TYPE CODE="7">Contract award notice</TD_DOCUMENT_TYPE>
+         <NC_CONTRACT_NATURE CODE="1">Works</NC_CONTRACT_NATURE>
+         <PR_PROC CODE="V">Contract award without prior publication</PR_PROC>
+         <RP_REGULATION CODE="5">European Union, with participation by GPA countries</RP_REGULATION>
+         <TY_TYPE_BID CODE="9">Not applicable</TY_TYPE_BID>
+         <AC_AWARD_CRIT CODE="2">The most economic tender</AC_AWARD_CRIT>
+         <MA_MAIN_ACTIVITIES CODE="R">Railway services</MA_MAIN_ACTIVITIES>
+         <HEADING>01E06</HEADING>
+         <INITIATOR>01</INITIATOR>
+         <DIRECTIVE VALUE="2014/25/EU"/>
+      </CODIF_DATA>
+   </CODED_DATA_SECTION>
+   <TRANSLATION_SECTION>
+      <ML_TITLES>
+         <ML_TI_DOC LG="BG">
+            <TI_CY>Холандия</TI_CY>
+            <TI_TOWN>Утрехт</TI_TOWN>
+            <TI_TEXT>
+               <P>Строителни и монтажни работи по общо изграждане на мостове, виадукти, тунели и подлези</P>
+            </TI_TEXT>
+         </ML_TI_DOC>
+         <ML_TI_DOC LG="CS">
+            <TI_CY>Nizozemsko</TI_CY>
+            <TI_TOWN>Utrecht</TI_TOWN>
+            <TI_TEXT>
+               <P>Stavební úpravy mostů a tunelů, šachet a podchodů</P>
+            </TI_TEXT>
+         </ML_TI_DOC>
+         <ML_TI_DOC LG="DA">
+            <TI_CY>Nederlandene</TI_CY>
+            <TI_TOWN>Utrecht</TI_TOWN>
+            <TI_TEXT>
+               <P>Bygge- og anlægsarbejde i forbindelse med broer, tunneler, skakte og underføringer</P>
+            </TI_TEXT>
+         </ML_TI_DOC>
+         <ML_TI_DOC LG="DE">
+            <TI_CY>die Niederlande</TI_CY>
+            <TI_TOWN>Utrecht</TI_TOWN>
+            <TI_TEXT>
+               <P>Bauarbeiten für Brücken, Tunnel, Schächte und Unterführungen</P>
+            </TI_TEXT>
+         </ML_TI_DOC>
+         <ML_TI_DOC LG="EL">
+            <TI_CY>Κάτω Χώρες</TI_CY>
+            <TI_TOWN>Ουτρέχτη</TI_TOWN>
+            <TI_TEXT>
+               <P>Κατασκευαστικές εργασίες για γέφυρες και σήραγγες, φρέατα και υπόγειες διαβάσεις</P>
+            </TI_TEXT>
+         </ML_TI_DOC>
+         <ML_TI_DOC LG="EN">
+            <TI_CY>Netherlands</TI_CY>
+            <TI_TOWN>Utrecht</TI_TOWN>
+            <TI_TEXT>
+               <P>Construction work for bridges and tunnels, shafts and subways</P>
+            </TI_TEXT>
+         </ML_TI_DOC>
+         <ML_TI_DOC LG="ES">
+            <TI_CY>Países Bajos</TI_CY>
+            <TI_TOWN>Utrecht</TI_TOWN>
+            <TI_TEXT>
+               <P>Trabajos de construcción de puentes y túneles, pozos y pasos subterráneos</P>
+            </TI_TEXT>
+         </ML_TI_DOC>
+         <ML_TI_DOC LG="ET">
+            <TI_CY>Madalmaad</TI_CY>
+            <TI_TOWN>Utrecht</TI_TOWN>
+            <TI_TEXT>
+               <P>Sildade ja tunnelite, šahtide ja metroode ehitustööd</P>
+            </TI_TEXT>
+         </ML_TI_DOC>
+         <ML_TI_DOC LG="FI">
+            <TI_CY>Alankomaat</TI_CY>
+            <TI_TOWN>Utrecht</TI_TOWN>
+            <TI_TEXT>
+               <P>Siltojen, tunnelien ja kuilujen rakentamistyöt</P>
+            </TI_TEXT>
+         </ML_TI_DOC>
+         <ML_TI_DOC LG="FR">
+            <TI_CY>Pays-Bas</TI_CY>
+            <TI_TOWN>Utrecht</TI_TOWN>
+            <TI_TEXT>
+               <P>Travaux de construction de ponts et de tunnels, de puits et de passages souterrains</P>
+            </TI_TEXT>
+         </ML_TI_DOC>
+         <ML_TI_DOC LG="GA">
+            <TI_CY>Ísiltír, an</TI_CY>
+            <TI_TOWN>Utrecht</TI_TOWN>
+            <TI_TEXT>
+               <P>Construction work for bridges and tunnels, shafts and subways</P>
+            </TI_TEXT>
+         </ML_TI_DOC>
+         <ML_TI_DOC LG="HR">
+            <TI_CY>Nizozemska</TI_CY>
+            <TI_TOWN>Utrecht</TI_TOWN>
+            <TI_TEXT>
+               <P>Građevinski radovi na mostovima i tunelima, okanama i podzemnim željeznicama</P>
+            </TI_TEXT>
+         </ML_TI_DOC>
+         <ML_TI_DOC LG="HU">
+            <TI_CY>Hollandia</TI_CY>
+            <TI_TOWN>Utrecht</TI_TOWN>
+            <TI_TEXT>
+               <P>Hidak, alagutak, aknák és aluljárók tervezése és építése</P>
+            </TI_TEXT>
+         </ML_TI_DOC>
+         <ML_TI_DOC LG="IT">
+            <TI_CY>Paesi Bassi</TI_CY>
+            <TI_TOWN>Utrecht</TI_TOWN>
+            <TI_TEXT>
+               <P>Lavori di costruzione di ponti e gallerie, pozzi e sottopassaggi</P>
+            </TI_TEXT>
+         </ML_TI_DOC>
+         <ML_TI_DOC LG="LT">
+            <TI_CY>Nyderlandai, Olandija</TI_CY>
+            <TI_TOWN>Utrechtas</TI_TOWN>
+            <TI_TEXT>
+               <P>Tiltų ir tunelių, šachtų, požeminių perėjų ir metro statybos darbai</P>
+            </TI_TEXT>
+         </ML_TI_DOC>
+         <ML_TI_DOC LG="LV">
+            <TI_CY>Nīderlande</TI_CY>
+            <TI_TOWN>Utrehta</TI_TOWN>
+            <TI_TEXT>
+               <P>Tiltu un tuneļu, šahtu un apakšzemes pāreju būvniecības darbi</P>
+            </TI_TEXT>
+         </ML_TI_DOC>
+         <ML_TI_DOC LG="MT">
+            <TI_CY>in-Netherlands</TI_CY>
+            <TI_TOWN>Utrecht</TI_TOWN>
+            <TI_TEXT>
+               <P>Xogħlijiet tal-kostruzzjoni għall-pontijiet, u mini, ċmieni ta’ l-arja u passaġġi ta’ taħt l-art</P>
+            </TI_TEXT>
+         </ML_TI_DOC>
+         <ML_TI_DOC LG="NL">
+            <TI_CY>Nederland</TI_CY>
+            <TI_TOWN>Utrecht</TI_TOWN>
+            <TI_TEXT>
+               <P>Bouwen van bruggen en tunnels, schachten en ondergrondse doorgangen</P>
+            </TI_TEXT>
+         </ML_TI_DOC>
+         <ML_TI_DOC LG="PL">
+            <TI_CY>Niderlandy</TI_CY>
+            <TI_TOWN>Utrecht</TI_TOWN>
+            <TI_TEXT>
+               <P>Roboty budowlane w zakresie budowy mostów i tuneli, szybów i kolei podziemnej</P>
+            </TI_TEXT>
+         </ML_TI_DOC>
+         <ML_TI_DOC LG="PT">
+            <TI_CY>Países Baixos</TI_CY>
+            <TI_TOWN>Utreque</TI_TOWN>
+            <TI_TEXT>
+               <P>Construção de pontes, túneis, poços e passagens subterrâneas</P>
+            </TI_TEXT>
+         </ML_TI_DOC>
+         <ML_TI_DOC LG="RO">
+            <TI_CY>Ţările de Jos</TI_CY>
+            <TI_TOWN>Utrecht</TI_TOWN>
+            <TI_TEXT>
+               <P>Lucrări de construcţii de poduri şi tuneluri, puţuri şi pasaje subterane</P>
+            </TI_TEXT>
+         </ML_TI_DOC>
+         <ML_TI_DOC LG="SK">
+            <TI_CY>Holandsko</TI_CY>
+            <TI_TOWN>Utrecht</TI_TOWN>
+            <TI_TEXT>
+               <P>Stavebné práce na mostoch a tuneloch, šachtách a podzemných dráhach</P>
+            </TI_TEXT>
+         </ML_TI_DOC>
+         <ML_TI_DOC LG="SL">
+            <TI_CY>Nizozemska</TI_CY>
+            <TI_TOWN>Utrecht</TI_TOWN>
+            <TI_TEXT>
+               <P>Gradbena dela na mostovih, predorih, jaških in podhodih</P>
+            </TI_TEXT>
+         </ML_TI_DOC>
+         <ML_TI_DOC LG="SV">
+            <TI_CY>Nederländerna</TI_CY>
+            <TI_TOWN>Utrecht</TI_TOWN>
+            <TI_TEXT>
+               <P>Bygg- och anläggningsarbeten: broar, tunnlar, schakt och gångtunnlar</P>
+            </TI_TEXT>
+         </ML_TI_DOC>
+      </ML_TITLES>
+      <ML_AA_NAMES>
+         <AA_NAME LG="NL">ProRail BV</AA_NAME>
+      </ML_AA_NAMES>
+   </TRANSLATION_SECTION>
+   <FORM_SECTION>
+      <F06_2014 CATEGORY="ORIGINAL" FORM="F06" LG="NL">
+         <CONTRACTING_BODY>
+            <ADDRESS_CONTRACTING_BODY>
+               <OFFICIALNAME>ProRail BV</OFFICIALNAME>
+               <NATIONALID>381962604</NATIONALID>
+               <ADDRESS>Moreelsepark 3</ADDRESS>
+               <TOWN>Utrecht</TOWN>
+               <POSTAL_CODE>3511 EP</POSTAL_CODE>
+               <COUNTRY VALUE="NL"/>
+               <CONTACT_POINT>Paul Norbart</CONTACT_POINT>
+               <E_MAIL>aanbestedingen@prorail.nl</E_MAIL>
+               <n2016:NUTS CODE="NL"/>
+               <URL_GENERAL>http://www.prorail.nl/leveranciers/aanbesteden-en-inkoop</URL_GENERAL>
+            </ADDRESS_CONTRACTING_BODY>
+            <CE_ACTIVITY VALUE="RAILWAY_SERVICES"/>
+         </CONTRACTING_BODY>
+         <OBJECT_CONTRACT>
+            <TITLE>
+               <P>Contractwijziging landelijk — TunnelAlliantie raamovereenkomst.</P>
+            </TITLE>
+            <REFERENCE_NUMBER>Verwijzing naar TenderNed nummer 29069</REFERENCE_NUMBER>
+            <CPV_MAIN>
+               <CPV_CODE CODE="45221000"/>
+            </CPV_MAIN>
+            <TYPE_CONTRACT CTYPE="WORKS"/>
+            <SHORT_DESCR>
+               <P>Op 21.6.2017 heeft ProRail de vrijwillige Europese publicatie gedaan van de verlenging van de raamovereenkomst TunnelAlliantie met 1 jaar.</P>
+               <P>Dit voornemen is aangevochten bij de rechtbank van Utrecht en door ProRail verloren. Het vonnis is 4 oktober jongstleden betekend. Het besluit is als volgt:</P>
+               <P>De voorzieningenrechter gebiedt ProRail haar voornemen tot verlenging van de raamovereenkomst van 16.6.2017 in te trekken binnen 3 werkdagen na betekening van het vonnis.</P>
+               <P>De voorzieningenrechter verbiedt ProRail de raamovereenkomst te verlengen op grond van de feiten en omstandigheden zoals zij die ten grondslag heeft gelegd aan haar voornemen van 16.6.2017.</P>
+               <P>De verlenging was Europees gepubliceerd onder TenderNed nummer 145223 met als omschrijving contractwijziging landelijk — TunnelAlliantie raamovereenkomst.</P>
+               <P>Deze vrijwillige publicatie wordt vandaag ingetrokken. Hiermee voldoen we aan het besluit uit het vonnis.</P>
+            </SHORT_DESCR>
+            <VAL_TOTAL CURRENCY="EUR" PUBLICATION="YES">1.0</VAL_TOTAL>
+            <NO_LOT_DIVISION/>
+            <OBJECT_DESCR ITEM="1">
+               <CPV_ADDITIONAL>
+                  <CPV_CODE CODE="45234000"/>
+               </CPV_ADDITIONAL>
+               <n2016:NUTS CODE="NL"/>
+               <SHORT_DESCR>
+                  <P>Geen verlenging van de raamovereenkomst TunnelAlliantie.</P>
+               </SHORT_DESCR>
+               <AC PUBLICATION="YES">
+                  <AC_QUALITY>
+                     <AC_CRITERION>Kwaliteit</AC_CRITERION>
+                     <AC_WEIGHTING>0</AC_WEIGHTING>
+                  </AC_QUALITY>
+                  <AC_PRICE>
+                     <AC_WEIGHTING>0</AC_WEIGHTING>
+                  </AC_PRICE>
+               </AC>
+               <NO_OPTIONS/>
+               <NO_EU_PROGR_RELATED/>
+            </OBJECT_DESCR>
+         </OBJECT_CONTRACT>
+         <PROCEDURE>
+            <PT_AWARD_CONTRACT_WITHOUT_CALL>
+               <D_OUTSIDE_SCOPE/>
+               <D_JUSTIFICATION>
+                  <P>Bij deze wordt het voornemen tot verlengen van de raamovereenkomst TunnelAlliantie ingetrokken.</P>
+               </D_JUSTIFICATION>
+            </PT_AWARD_CONTRACT_WITHOUT_CALL>
+            <FRAMEWORK/>
+            <CONTRACT_COVERED_GPA/>
+         </PROCEDURE>
+         <AWARD_CONTRACT ITEM="1">
+            <CONTRACT_NO>1</CONTRACT_NO>
+            <TITLE>
+               <P>Contractwijziging ingetrokken landelijk — TunnelAlliantie raamovereenkomst</P>
+            </TITLE>
+            <AWARDED_CONTRACT>
+               <DATE_CONCLUSION_CONTRACT>2017-06-15</DATE_CONCLUSION_CONTRACT>
+               <TENDERS PUBLICATION="YES">
+                  <NB_TENDERS_RECEIVED>999</NB_TENDERS_RECEIVED>
+               </TENDERS>
+               <CONTRACTORS PUBLICATION="YES">
+                  <NO_AWARDED_TO_GROUP/>
+                  <CONTRACTOR>
+                     <ADDRESS_CONTRACTOR>
+                        <OFFICIALNAME>Geen</OFFICIALNAME>
+                        <ADDRESS>Geen</ADDRESS>
+                        <TOWN>Utrecht</TOWN>
+                        <POSTAL_CODE>3500 AA</POSTAL_CODE>
+                        <COUNTRY VALUE="NL"/>
+                        <n2016:NUTS CODE="NL"/>
+                     </ADDRESS_CONTRACTOR>
+                     <SME/>
+                  </CONTRACTOR>
+               </CONTRACTORS>
+               <VALUE PUBLICATION="YES">
+                  <VAL_TOTAL CURRENCY="EUR">1.0</VAL_TOTAL>
+               </VALUE>
+            </AWARDED_CONTRACT>
+         </AWARD_CONTRACT>
+         <COMPLEMENTARY_INFO>
+            <INFO_ADD>
+               <P>Bij deze wordt het voornemen tot verlengen van de raamovereenkomst TunnelAlliantie ingetrokken.</P>
+            </INFO_ADD>
+            <ADDRESS_REVIEW_BODY>
+               <OFFICIALNAME>Voor bevoegde instantie beroepsprocedure: zie ARN 2016</OFFICIALNAME>
+               <TOWN>Utrecht</TOWN>
+               <COUNTRY VALUE="NL"/>
+               <E_MAIL>procurement@prorail.nl</E_MAIL>
+               <URL>https://www.prorail.nl/leveranciers</URL>
+            </ADDRESS_REVIEW_BODY>
+            <DATE_DISPATCH_NOTICE>2017-10-06</DATE_DISPATCH_NOTICE>
+         </COMPLEMENTARY_INFO>
+      </F06_2014>
+   </FORM_SECTION>
+</TED_EXPORT>

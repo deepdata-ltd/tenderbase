@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.9.RELEASE</version>
+		<relativePath />
+	</parent>
+
+	<groupId>hu.deepdata.tenderbase</groupId>
+	<artifactId>tenderbase-build</artifactId>
+	<packaging>pom</packaging>
+	<version>1.0.0-SNAPSHOT</version>
+
+	<properties>
+		<commons-codec.version>1.11</commons-codec.version>
+		<commons-compress.version>1.15</commons-compress.version>
+		<easybatch.version>5.2.0</easybatch.version>
+		<java-semver.version>0.9.0</java-semver.version>
+		<java.version>1.8</java.version>
+		<kotlin.compiler.incremental>true</kotlin.compiler.incremental>
+		<kotlin.version>1.2.0</kotlin.version>
+		<kotlin-logging.version>1.5.3</kotlin-logging.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+	</properties>
+
+	<repositories>
+		<repository>
+			<id>jitpack.io</id>
+			<url>https://jitpack.io</url>
+		</repository>
+		<repository>
+			<id>spring-milestone</id>
+			<url>https://repo.spring.io/libs-release</url>
+		</repository>
+	</repositories>
+
+	<pluginRepositories>
+		<pluginRepository>
+			<id>spring-milestone</id>
+			<url>https://repo.spring.io/libs-release</url>
+		</pluginRepository>
+	</pluginRepositories>
+
+	<modules>
+		<module>libraries/ted-xml-simplexml-parser</module>
+		<module>libraries/ocds-jackson-model</module>
+		<module>libraries/webapp-jpa-model</module>
+		<module>applications/ted-xml-importer</module>
+		<module>applications/webapp</module>
+	</modules>
+
+	<licenses>
+		<license>
+			<name>Apache License, Version 2.0</name>
+			<url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+			<comments>A business-friendly OSS license</comments>
+		</license>
+	</licenses>
+
+	<organization>
+		<name>DeepData Ltd.</name>
+		<url>http://www.deepdata.hu/</url>
+	</organization>
+
+	<developers>
+		<developer>
+			<id>juzraai</id>
+			<name>Zsolt Jurányi</name>
+			<email>zsolt.juranyi@gmail.com</email>
+			<organization>DeepData Ltd.</organization>
+			<organizationUrl>http://www.deepdata.hu/</organizationUrl>
+			<roles>
+				<role>developer</role>
+			</roles>
+		</developer>
+	</developers>
+</project>

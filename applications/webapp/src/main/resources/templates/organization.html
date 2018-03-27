@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" data-layout-decorator="layouts/page">
+
+<head>
+	<title data-th-text="${organization.name}">Organization name</title>
+</head>
+
+<body>
+<div data-layout-fragment="content">
+	<div class="row">
+		<div class="col-12">
+			<h1 class="my-5" data-th-text="${organization.name}">Organization name</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-12">
+			<h2 class="my-5">Latest address</h2>
+		</div>
+		<div class="col-lg-10 offset-lg-1">
+			<div data-th-replace="fragments :: fieldsOfOrg (o=${organization})"></div>
+			<p>
+				<a data-th-href="'/api/organization/' + ${organization.id}" class="btn btn-sm btn-outline-info">
+					<i class="fa fa-fw fa-code"></i>
+					Organization in JSON
+				</a>
+			</p>
+		</div>
+	</div>
+	<div class="row" data-th-if="${releases}">
+		<div class="col-12 my-5 text-center">
+			<ul class="nav nav-tabs">
+				<li class="nav-item" data-th-each="role: ${roles}">
+					<a class="nav-link" data-th-classappend="${role.name == listedRole} ? active"
+					   data-th-href="${role.name == listedRole} ? 'javascript:void(0)' : '?role=' + ${role.name}"
+					   data-th-text="${role.name + ' (' + role.count + ')'}">Role (#)</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="row" data-th-if="${releases}">
+		<div class="col-12" data-th-include="fragments :: releaseList (releases=${releases})"></div>
+	</div>
+	<div class="row mb-5" data-th-if="${releases}">
+		<div class="col-lg-6 mb-2">
+			<a href="#" class="btn btn-outline-primary" data-th-href="${pageLinkPrefix} + ${releases.getNumber()-1}"
+			   data-th-unless="${releases.isFirst()}">
+				<i class="fa fa-fw fa-angle-left"></i>
+				Page
+				<span data-th-text="${releases.getNumber()}"></span>
+			</a>
+			<a href="#" class="btn btn-outline-primary" data-th-href="${pageLinkPrefix} + ${releases.getNumber()+1}"
+			   data-th-unless="${releases.isLast()}">
+				Page
+				<span data-th-text="${releases.getNumber() + 2}"></span>
+				<i class="fa fa-fw fa-angle-right"></i>
+			</a>
+		</div>
+		<div class="col-lg-6 mb-2 text-lg-right">
+			<a href="#" class="btn btn-outline-info"
+			   data-th-href="'/api' + ${pageLinkPrefix} + ${releases.getNumber()}">
+				<i class="fa fa-fw fa-code"></i> Page as JSON
+			</a>
+		</div>
+	</div>
+</div>
+</body>
+
+</html>
