@@ -6,7 +6,7 @@
 
 The goal of this project is to gather, store and serve tender information from various countries. Data should be available on a web interface as well as via an API which serves [OCDS](http://standard.open-contracting.org/) records.
 
-**Please see the full documentation in `docs/` directory.** You can use any webserver to view the web-based interactive documentation locally. Or you can install and use [Docsify](https://docsify.js.org/) to view it.
+**Please see the full documentation at [https://deepdata-ltd.github.io/tenderbase/](https://deepdata-ltd.github.io/tenderbase/) or in `docs` directory.**
 
 
 
