@@ -145,3 +145,11 @@ There are 4 batch jobs in this importing mechanism:
 	* record payload: `XmlRecord`
 	* processing: parses XML, drops by country, resolves tender ID, drops if fails, generates OCDS model, generates web application model
 	* writes: web application records and XML meta record into database
+
+When the batch tasks complete the importer calculates results of slow queries and stores them in the database, as a cache for the web application. Results are stored in key-value pairs. Currently the following are calculated:
+
+Key                    | Value description
+-----------------------|------------------
+availableTags          | Comma separated list of used release tags
+sumOfAwardedMillionEur | Sum of awarded values in million EURs
+tenderCount	           | Count of tenders

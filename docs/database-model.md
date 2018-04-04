@@ -3,13 +3,13 @@ We were looking for a simple and fast solution to store and read OCDS records. W
 * We store the generated OCDS releases as JSON strings in a single field of a table.
 * We only create additional fields and tables for those information which is needed in the filtering feature.
 
-In result we have only 4 tables - 1 for only the importer and the others are for the web application. Latter ones have `w_` prefix to distinguish from OCDS names.
+In result we have only 5 tables - 1 for only the importer and the others are for the web application. Latter ones have `w_` prefix to distinguish from OCDS names.
 
 
 
 ## file_meta
 
-This table stores metadata for TAR and XML files. The importer uses it to manage which files are processed or need reprocessing and also tender ID resolving is based on data stored here.
+This table stores metadata for TAR and XML files. The [importer](ted-xml-importer.md) uses it to manage which files are processed or need reprocessing and also tender ID resolving is based on data stored here.
 
 Field          | Type         | Index       | Description
 ---------------|--------------|-------------|------------
@@ -22,6 +22,17 @@ process_version| varchar(255) |             | Version of importer which processe
 ref_notice_id  | varchar(255) |             | Referenced notice identifier from TED notice
 tar_id         | varchar(255) | index       | For XML files, it's the identifier of the related TAR meta record
 tender_id      | varchar(255) |             | Resolved tender indentifier, which is the swapped identifier of the first notice of the tender. Swapping means that the order of the number and year parts are reversed, e.g. `12345-2018` -> `2018-12345`.
+
+
+
+## w_cache
+
+This table contains results of slow queries which are calculated at the end of the import. Records represent key-value pairs.
+
+Field | Type         | Index       | Description
+------|--------------|-------------|------------
+id    | varchar(255) | primary key | Key
+value | longtext     |             | Value
 
 
 
@@ -51,6 +62,8 @@ w_release_id      | varchar(255) |             | Identifier of the release
 
 
 ## w_release
+
+This table stores information of releases.
 
 Field          | Type         | Index       | Description
 ---------------|--------------|-------------|------------

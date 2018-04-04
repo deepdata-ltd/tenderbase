@@ -47,7 +47,7 @@ If you need to reference one of these modules in your project, call `mvn clean i
 
 ## Programming languages
 
-The OCDS model contains POJO definitions generated using 3rd-party tools, so it's written in **Java**.
+The [OCDS model](ocds-model.md) contains POJO definitions generated using 3rd-party tools, so it's written in **Java**.
 
 The rest of the project (applications, models, parsers) is written by us, in [Kotlin](https://kotlinlang.org/). Kotlin has many advantages over Java and speeds up development, while it's fully interoperable and **runs on the JVM.**
 

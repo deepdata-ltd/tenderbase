@@ -30,8 +30,8 @@ class ReleaseController {
 		val ocdsRelease = toOcds(wRelease)
 		val map = mutableMapOf(
 				"release" to ocdsRelease,
-				"id" to id,
-				"json" to toPrettyJson(ocdsRelease)
+				"id" to id/*,
+				"json" to toPrettyJson(ocdsRelease)*/
 		)
 		if (null != wRelease?.ocid) {
 			val wReleases = repo?.findByOcid(wRelease.ocid!!)

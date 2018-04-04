@@ -49,17 +49,17 @@ You can use `ted-xml-downloader.sh` Bash script to download tender XML files fro
 	* [Request your own OCDS prefix](http://standard.open-contracting.org/latest/en/implementation/registration/) and set `import.ocdsPrefix` to it.
 	* Make sure that `import.dailyPackagesDir` points to the same directory as `$PREFIX` in the downloader script.
 	* Specify the MySQL database connection parameters under `db` group.
-4. To run the importer, type the following command:
+4. To run the [importer](ted-xml-importer.md), type the following command:
 ```bash
 java -jar tenderbase-ted-xml-importer.jar
 ```
-5. The importer will process the TAR files in the specified directory, parse the XMLs and store records in the database for the web application.
+5. The importer will process the TAR files in the specified directory, parse the [XMLs](ted-xml-model.md) and store records in the [database](database-model.md) for the web application.
 
 
 
 ## Scheduling download and import
 
-1. It is recommended to download earlier packages manually first, and start the scheduled import afterwards.
+1. It is recommended to [download earlier packages](#downloading-ted-xmls) manually first, and start the scheduled import afterwards.
 2. Schedule the `tenderbase-cron.sh` in your crontab, e.g.:
 ```
 # run daily @ 11:00
