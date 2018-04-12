@@ -24,9 +24,9 @@ You can reach the release list page from the navigation bar or from the homepage
 
 EUR values are there to give a unified view about each tender's value. As **we calculate them based on a fixed currency rate from the past,** real value may differ now. You can find the real value in the original currency if you navigate to the details page of a release by clicking on its title.
 
-You can filter the list if you click on the gray Filters bar above it. This panel is automatically opened if any filter is active. You can filter for the same fields listed above and also for the supplier name.
+You can filter the list if you click on the gray Filters bar above it. This panel is automatically opened if any filter is active. You can filter for the same fields listed above and for the supplier name. Moreover, there is an additional field which can search in all text fields of the releases.
 
-Text filters handle the specified value as **one expression**, and every whitespace in it as a wildcard. For example, if you search for `eeny meeny miny moe` in the title, only those titles will appear which contain **all** these words and in this exact **order**, but not necessarily each after other, e.g. `v eeny w meeny x miny y moe z` title will also come up.
+Text filters accept word list as their input. You can separate the words with spaces or commas (`,`). Words are connected with logical AND, this means that they match if the target data field contains all input words.
 
 Filter for published date accepts the format of `YYYY-MM-DD - YYYY-MM-DD`, though you can use the date range picker window to select the dates just by clicking on them. It has some predefined ranges, but you can set a custom range easily.
 

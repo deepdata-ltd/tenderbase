@@ -16,6 +16,7 @@
 
 package hu.deepdata.tenderbase.webapp.model
 
+import hu.deepdata.tenderbase.webapp.model.WRelease.Companion.TABLE_NAME
 import java.util.*
 import javax.persistence.*
 
@@ -23,13 +24,13 @@ import javax.persistence.*
  * @author Zsolt Jurányi
  */
 @Entity
-@Table(name = "w_release", indexes = [
+@Table(name = TABLE_NAME, indexes = [
 	(Index(name = "release_country_idx", columnList = "buyerCountry")),
-	(Index(name = "release_buyer_idx", columnList = "buyerName")),
 	(Index(name = "release_ocid_idx", columnList = "ocid")),
 	(Index(name = "release_date_idx", columnList = "publishedAt")),
-	(Index(name = "release_title_idx", columnList = "title")),
 	(Index(name = "release_value_idx", columnList = "eurValue"))
+	// FULLTEXT indexes will be added by DatabasePreparationService for these fields:
+	// `buyerName`, `supplierNames`, `title` `words`
 ])
 data class WRelease(
 		@Id
@@ -37,6 +38,8 @@ data class WRelease(
 
 		@Column(length = 2)
 		var buyerCountry: String? = null,
+
+		@Lob
 		var buyerName: String? = null,
 		var eurValue: Long? = null,
 
@@ -45,6 +48,19 @@ data class WRelease(
 
 		var ocid: String? = null, // OCID prefix + tender ID
 		var publishedAt: Date? = null,
+
+		@Lob
+		var supplierNames: String? = null,
+
 		var tags: String? = null,
-		var title: String? = null
-)
+
+		@Lob
+		var title: String? = null,
+
+		@Lob
+		var words: String? = null
+) {
+	companion object {
+		const val TABLE_NAME = "w_release"
+	}
+}

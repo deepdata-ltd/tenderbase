@@ -60,12 +60,16 @@ java -jar tenderbase-ted-xml-importer.jar
 ## Scheduling download and import
 
 1. It is recommended to [download earlier packages](#downloading-ted-xmls) manually first, and start the scheduled import afterwards.
-2. Schedule the `tenderbase-cron.sh` in your crontab, e.g.:
+2. Edit the `tenderbase-cron.sh` script and ensure that `cd` command at the beginning switches to the actual directory of the script:
+```bash
+cd /path/where/the/script/is && ...
+```
+3. Schedule the `tenderbase-cron.sh` in your crontab, e.g.:
 ```
 # run daily @ 11:00
 0 11 * * * /path/where/the/script/is/tenderbase-cron.sh
 ```
-3. The script will look for `ted-xml-downloader.sh` and `tenderbase-ted-xml-importer.jar` in the same directory where the script file is, and will run them each after other.
+4. The script will look for `ted-xml-downloader.sh` and `tenderbase-ted-xml-importer.jar` in the same directory where the script file is, and will run them each after other.
 
 
 

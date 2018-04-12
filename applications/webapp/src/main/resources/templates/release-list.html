@@ -2,132 +2,132 @@
 <html lang="en" data-layout-decorator="layouts/page">
 
 <head>
-	<title>Releases</title>
+    <title>Releases</title>
 </head>
 
 <body>
-	<div data-layout-fragment="content">
-		<div class="row">
-			<div class="col-12 my-5">
-				<h1>Releases</h1>
-				<p class="font-italic">
-					Listing
-					<span data-th-if="${releases.totalElements < releaseCount}">
+    <div data-layout-fragment="content">
+        <div class="row">
+            <div class="col-12 my-5">
+                <h1>Releases</h1>
+                <p class="font-italic">
+                    Listing
+                    <span data-th-if="${releases.totalElements < releaseCount}">
 						<span data-th-text="${releases.totalElements}">0</span> filtered releases. Total release count:
-						<span data-th-text="${releaseCount}">0</span>
-					</span>
-					<span data-th-if="${releases.totalElements == releaseCount}">
+                    <span data-th-text="${releaseCount}">0</span>
+                    </span>
+                    <span data-th-if="${releases.totalElements == releaseCount}">
 						<span data-th-text="${releaseCount}">0</span> releases
-					</span>
-				</p>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-12">
-				<div class="card mb-5">
-					<div class="card-header" role="tab" data-toggle="collapse" data-target="#filters">
-						<i class="fa fa-fw fa-filter"></i>
-						Filters
-					</div>
-					<div id="filters" class="collapse" role="tabpanel" data-th-classappend="${filters.isFiltering()} ? show">
-						<div class="card-body">
-							<form>
-								<input type="hidden" id="maxDate" data-th-value="${filters.maxDate}">
-								<input type="hidden" id="minDate" data-th-value="${filters.minDate}">
-								<div class="row mb-3">
-									<div class="col-lg-6 form-group">
-										<label for="title">Title</label>
-										<input type="text" class="form-control" data-th-field="${filters.title}" placeholder="Type words and spaces">
-										<small class="form-text text-muted">It will match all words, and in order!</small>
-									</div>
-									<div class="col-lg-6 form-group">
-										<label for="date">Publish date</label>
-										<input type="text" class="form-control drp" data-th-field="${filters.date}" placeholder="YYYY-MM-DD - YYYY-MM-DD">
-									</div>
-									<div class="col-lg-6 form-group">
-										<label for="title">Buyer</label>
-										<input type="text" class="form-control" data-th-field="${filters.buyer}" placeholder="Type words and spaces">
-										<small class="form-text text-muted">It will match all words, and in order!</small>
-									</div>
-									<div class="col-lg-6 form-group">
-										<label for="title">Supplier</label>
-										<input type="text" class="form-control" data-th-field="${filters.supplier}" placeholder="Type words and spaces">
-										<small class="form-text text-muted">It will match all words, and in order!</small>
-									</div>
-									<div class="col-sm-6 col-lg-3 form-group">
-										<label for="minValue">Minimum value</label>
-										<div class="input-group">
-											<input type="number" class="form-control" data-th-field="${filters.minValue}" placeholder="Type numbers">
-											<div class="input-group-addon">
-												<span class="input-group-text">EUR</span>
-											</div>
-										</div>
-									</div>
-									<div class="col-sm-6 col-lg-3 form-group">
-										<label for="maxValue">Maximum value</label>
-										<div class="input-group">
-											<input type="number" class="form-control" data-th-field="${filters.maxValue}" placeholder="Type numbers">
-											<div class="input-group-addon">
-												<span class="input-group-text">EUR</span>
-											</div>
-										</div>
-									</div>
-									<div class="col-sm-6 col-lg-3 form-group">
-										<label for="tag">Tag</label>
-										<select class="form-control" data-th-field="${filters.tag}">
+                    </span>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="card mb-5">
+                    <div class="card-header" role="tab" data-toggle="collapse" data-target="#filters">
+                        <i class="fa fa-fw fa-filter"></i> Filters
+                    </div>
+                    <div id="filters" class="collapse" role="tabpanel" data-th-classappend="${filters.isFiltering()} ? show">
+                        <div class="card-body">
+                            <form>
+                                <input type="hidden" id="maxDate" data-th-value="${filters.maxDate}">
+                                <input type="hidden" id="minDate" data-th-value="${filters.minDate}">
+                                <div class="row mb-3">
+                                    <div class="col-lg-6 form-group">
+                                        <label for="words">All fields</label>
+                                        <input type="text" class="form-control" data-th-field="${filters.words}" placeholder="Type words">
+                                    </div>
+                                    <div class="col-lg-6 form-group">
+                                        <label for="title">Title</label>
+                                        <input type="text" class="form-control" data-th-field="${filters.title}" placeholder="Type words">
+                                    </div>
+                                    <div class="col-lg-6 form-group">
+                                        <label for="buyer">Buyer</label>
+                                        <input type="text" class="form-control" data-th-field="${filters.buyer}" placeholder="Type words">
+                                    </div>
+                                    <div class="col-lg-6 form-group">
+                                        <label for="supplier">Supplier</label>
+                                        <input type="text" class="form-control" data-th-field="${filters.supplier}" placeholder="Type words">
+                                    </div>
+                                    <div class="col-sm-6 col-lg-3 form-group">
+                                        <label for="minValue">Minimum value</label>
+                                        <div class="input-group">
+                                            <input type="number" class="form-control" data-th-field="${filters.minValue}" placeholder="Type numbers">
+                                            <div class="input-group-addon">
+                                                <span class="input-group-text">EUR</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-lg-3 form-group">
+                                        <label for="maxValue">Maximum value</label>
+                                        <div class="input-group">
+                                            <input type="number" class="form-control" data-th-field="${filters.maxValue}" placeholder="Type numbers">
+                                            <div class="input-group-addon">
+                                                <span class="input-group-text">EUR</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-lg-3 form-group">
+                                        <label for="tag">Tag</label>
+                                        <select class="form-control" data-th-field="${filters.tag}">
 											<option value="">All</option>
 											<option data-th-each="t : ${tagsAvailable}" data-th-value="${t}" data-th-text="${t}" data-th-selected="${filters.tag == t}">Tag</option>
 										</select>
-									</div>
-									<div class="col-sm-6 col-lg-3 form-group">
-										<label for="country">Country</label>
-										<select class="form-control" data-th-field="${filters.country}">
+                                    </div>
+                                    <div class="col-sm-6 col-lg-3 form-group">
+                                        <label for="country">Country</label>
+                                        <select class="form-control" data-th-field="${filters.country}">
 											<option value="">All</option>
 											<option data-th-each="c : ${countriesAvailable}" data-th-value="${c}" data-th-text="${c}" data-th-selected="${filters.country == c}">Country</option>
 										</select>
-									</div>
-								</div>
-								<div class="row mb-2">
-									<div class="col text-center">
-										<button type="submit" class="btn btn-outline-primary">Filter</button>
-										<a href="/releases/" class="btn btn-outline-secondary">Clear</a>
-									</div>
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-12" data-th-include="fragments :: releaseList (releases=${releases})"></div>
-		</div>
-		<div class="row mb-5">
-			<div class="col-lg-6 mb-2">
-				<a href="#" class="btn btn-outline-primary" data-th-href="${pageLinkPrefix} + ${releases.getNumber()-1}" data-th-unless="${releases.isFirst()}">
+                                    </div>
+                                    <div class="col-lg-6 form-group">
+                                        <label for="date">Publish date</label>
+                                        <input type="text" class="form-control drp" data-th-field="${filters.date}" placeholder="YYYY-MM-DD - YYYY-MM-DD">
+                                    </div>
+                                </div>
+                                <div class="row mb-2">
+                                    <div class="col text-center">
+                                        <button type="submit" class="btn btn-outline-primary">Filter</button>
+                                        <a href="/releases/" class="btn btn-outline-secondary">Clear</a>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12" data-th-include="fragments :: releaseList (releases=${releases})"></div>
+        </div>
+        <div class="row mb-5">
+            <div class="col-lg-6 mb-2">
+                <a href="#" class="btn btn-outline-primary" data-th-href="${pageLinkPrefix} + ${releases.getNumber()-1}" data-th-unless="${releases.isFirst()}">
 					<i class="fa fa-fw fa-angle-left"></i>
 					Page
 					<span data-th-text="${releases.getNumber()}"></span>
 				</a>
-				<a href="#" class="btn btn-outline-primary" data-th-href="${pageLinkPrefix} + ${releases.getNumber()+1}" data-th-unless="${releases.isLast()}">
+                <a href="#" class="btn btn-outline-primary" data-th-href="${pageLinkPrefix} + ${releases.getNumber()+1}" data-th-unless="${releases.isLast()}">
 					Page
 					<span data-th-text="${releases.getNumber() + 2}"></span>
 					<i class="fa fa-fw fa-angle-right"></i>
 				</a>
-			</div>
-			<div class="col-lg-6 mb-2 text-lg-right">
-				<a href="#" class="btn btn-outline-info" data-th-href="'/api' + ${pageLinkPrefix} + ${releases.getNumber()}">
+            </div>
+            <div class="col-lg-6 mb-2 text-lg-right">
+                <a href="#" class="btn btn-outline-info" data-th-href="'/api' + ${pageLinkPrefix} + ${releases.getNumber()}">
 					<i class="fa fa-fw fa-code"></i> Page as JSON
 				</a>
-			</div>
-		</div>
-	</div>
-	<div data-layout-fragment="scripts">
-		<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
-		<script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-		<script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
-		<script type="text/javascript" src="/js/drp.js"></script>
-	</div>
+            </div>
+        </div>
+    </div>
+    <div data-layout-fragment="scripts">
+        <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
+        <script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+        <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
+        <script type="text/javascript" src="/js/drp.js"></script>
+    </div>
 </body>
 
 </html>

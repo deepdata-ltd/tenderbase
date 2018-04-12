@@ -29,6 +29,6 @@ class WOrganizationsConverter : IConverter<ReleaseSchema, Set<WOrganization>> {
 
 	override fun convert(input: ReleaseSchema) = input.parties.map {
 		val json = mapper.writeValueAsString(it)
-		WOrganization(it.id, json, WReleaseConverter.crop(it.name, 255))
+		WOrganization(it.id, json, it.name)
 	}.toSet()
 }

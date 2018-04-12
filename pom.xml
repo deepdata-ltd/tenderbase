@@ -7,7 +7,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.5.9.RELEASE</version>
+		<version>1.5.12.RELEASE</version>
 		<relativePath />
 	</parent>
 
@@ -18,15 +18,17 @@
 
 	<properties>
 		<commons-codec.version>1.11</commons-codec.version>
-		<commons-compress.version>1.15</commons-compress.version>
+		<commons-compress.version>1.16.1</commons-compress.version>
+		<commons-lang3.version>3.7</commons-lang3.version>
 		<easybatch.version>5.2.0</easybatch.version>
 		<java-semver.version>0.9.0</java-semver.version>
 		<java.version>1.8</java.version>
 		<kotlin.compiler.incremental>true</kotlin.compiler.incremental>
-		<kotlin.version>1.2.0</kotlin.version>
-		<kotlin-logging.version>1.5.3</kotlin-logging.version>
+		<kotlin.version>1.2.31</kotlin.version>
+		<kotlin-logging.version>1.5.4</kotlin-logging.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<simple-xml.version>2.7.1</simple-xml.version>
 	</properties>
 
 	<repositories>

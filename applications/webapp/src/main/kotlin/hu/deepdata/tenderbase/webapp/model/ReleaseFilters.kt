@@ -14,6 +14,7 @@ data class ReleaseFilters(
 		var supplier: String = "",
 		var tag: String = "",
 		var title: String = "",
+		var words: String = "",
 
 		// settings:
 		var maxDate: String = "",

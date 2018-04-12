@@ -109,6 +109,7 @@ class TxiBatchContext(
 					.filter(TenderIdFilter())
 					.processor(OcdsReleaseMapper(ocdsConverterImpl))
 					.processor(WebappModelMapper(wReleaseConverter, wOrganizationsConverter, wParticipationsConverter))
+					.processor(WordExtractor())
 					.mapper(XmlFinalizer())
 					.processor(FileMetaSigner(currentVersionStr))
 					.writer(CustomHibernateRecordWriter(sessionFactory))

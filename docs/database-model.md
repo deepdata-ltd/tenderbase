@@ -68,10 +68,12 @@ This table stores information of releases.
 Field          | Type         | Index       | Description
 ---------------|--------------|-------------|------------
 id             | varchar(255) | primary key | Identifier of the release. Consists of the OCID and the swapped TED notice identifier.
-buyer_name     | varchar(255) | index       | Cropped name of the buyer organization
+buyer_name     | longtext     | fulltext    | Name of the buyer organization
 eur_value      | varchar(255) | index       | Tender value or summed award values converted into EUR currency
 json           | varchar(255) |             | OCDS [release](http://standard.open-contracting.org/latest/en/schema/reference/#release) object in JSON format
 ocid           | varchar(255) | index       | Identifier of the tendering process. Consists of the OCID prefix and the tender identifier.
 published_at   | varchar(255) | index       | Date when the release published at its original location (TED)
+supplier_names | longtext     | fulltext    | All supplier names concatenated with `|` as separator
 tags           | varchar(255) |             | OCDS [release tags](http://standard.open-contracting.org/latest/en/schema/codelists/#release-tag) separated by `,`
-title          | varchar(255) | index       | Title of the tender. For TED notices, it consits of the country, the city and the title.
+title          | longtext     | fulltext    | Title of the tender. For TED notices, it consits of the country, the city and the title.
+words          | longtext     | fulltext    | Extracted unique words from JSON, ordered

@@ -40,7 +40,7 @@ class WReleaseConverter : IConverter<ReleaseSchema, WRelease> {
 		id = input.id
 
 		buyerCountry = input.parties.firstOrNull { it.roles.contains("buyer") }?.address?.countryName
-		buyerName = crop(input.buyer?.name, 255)
+		buyerName = input.buyer?.name
 		eurValue = toEur(input.tender?.value)
 
 		var awardsEurValue = 0L
@@ -49,8 +49,11 @@ class WReleaseConverter : IConverter<ReleaseSchema, WRelease> {
 
 		ocid = input.ocid
 		publishedAt = input.date
+		supplierNames = input.parties
+				.filter { it.roles.contains("supplier") }
+				.joinToString("|", transform = Organization::getName)
 		tags = input.tag?.joinToString(",")
-		title = crop(input.tender?.title, 255)
+		title = input.tender?.title
 
 		json = generateJson(input)
 	}

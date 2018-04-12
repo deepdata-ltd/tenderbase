@@ -34,4 +34,5 @@ class XmlFinalizer : RecordMapper<Record<XmlRecord>, Record<List<Any>>> {
 		))
 	}
 
+
 }

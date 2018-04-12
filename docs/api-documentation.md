@@ -69,12 +69,13 @@ Returns the releases matching the filter criteria.
 
 Parameter    | Description
 -------------|------------
-buyerName    | Buyer name filter, treated as one expression, whitespaces are replaced to wildcards (e.g. `something to search` -> `%something%to%search%`)
+buye         | Buyer name filter, matches if the buyer's name contains all input words
 date         | Date range filter for publish date, format: `YYYY-MM-DD - YYYY-MM-DD`
 maxValue     | Maximum tender/award value in EUR
 minValue     | Minimum tender/award value in EUR
-supplierName | Supplier name filter, treated as one expression, whitespaces are replaced to wildcards (e.g. `something to search` -> `%something%to%search%`)
+supplier     | Supplier name filter, matches if the concatenated string of all supplier names contains all input words
 tag          | OCDS release tag
-title        | Tender title filter, treated as one expression, whitespaces are replaced to wildcards (e.g. `something to search` -> `%something%to%search%`)
+title        | Tender title filter, matches if the title contains all input words
+words        | Text filter, matches if the concatenated string of all text fields contains all input words (technically it uses the `words` database field)
 page         | 0-based page number, default: `0`
 size         | Number of items per page, default: `10`

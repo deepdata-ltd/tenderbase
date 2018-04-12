@@ -3,7 +3,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-
+	
 	<parent>
 		<groupId>hu.deepdata.tenderbase</groupId>
 		<artifactId>tenderbase-build</artifactId>
@@ -49,14 +49,14 @@
 		<dependency>
 			<groupId>org.simpleframework</groupId>
 			<artifactId>simple-xml</artifactId>
-			<version>2.7.1</version>
+			<version>${simple-xml.version}</version>
 		</dependency>
 
 		<!-- Util -->
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
-			<version>3.7</version>
+			<version>${commons-lang3.version}</version>
 		</dependency>
 	</dependencies>
 

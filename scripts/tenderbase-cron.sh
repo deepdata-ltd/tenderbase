@@ -15,6 +15,5 @@
 #    limitations under the License.
 #
 
-cd $(dirname $0)
-bash ./ted-xml-downloader.sh && java -jar tenderbase-ted-xml-importer.jar &>last.log
+cd /opt/tenderbase && bash ./ted-xml-downloader.sh && java -jar tenderbase-ted-xml-importer.jar &>last.log
 

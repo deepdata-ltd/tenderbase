@@ -16,13 +16,17 @@
 
 package hu.deepdata.tenderbase.webapp.model
 
+import hu.deepdata.tenderbase.webapp.model.WOrganization.Companion.TABLE_NAME
 import javax.persistence.*
 
 /**
  * @author Zsolt Jurányi
  */
 @Entity
-@Table(name = "w_organization", indexes = [(Index(name = "org_name_idx", columnList = "name"))])
+@Table(name = TABLE_NAME
+		// FULLTEXT indexes will be added by DatabasePreparationService for these fields:
+		// `name`
+)
 data class WOrganization(
 		@Id
 		var id: String? = null,
@@ -30,9 +34,14 @@ data class WOrganization(
 		@Lob
 		var json: String? = null,
 
+		@Lob
 		var name: String? = null
 
 ) {
+	companion object {
+		const val TABLE_NAME = "w_organization"
+	}
+
 	override fun equals(other: Any?): Boolean {
 		if (this === other) return true
 		if (other !is WOrganization) return false
